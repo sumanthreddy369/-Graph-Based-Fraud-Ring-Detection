@@ -1,0 +1,31 @@
+from __future__ import annotations
+
+import matplotlib.pyplot as plt
+import pandas as pd
+import networkx as nx
+
+from graph_builder import build_graph
+
+
+def main() -> None:
+    df = pd.read_csv("sample_graph.csv")
+    graph = build_graph(df)
+
+    plt.figure(figsize=(8, 6))
+    pos = nx.spring_layout(graph, seed=42)
+    nx.draw(
+        graph,
+        pos,
+        with_labels=True,
+        node_size=1200,
+        font_size=10,
+    )
+    plt.title("Sample Transaction Graph")
+    plt.savefig("graph_visualization.png", bbox_inches="tight")
+    plt.close()
+
+    print("Saved graph_visualization.png")
+
+
+if __name__ == "__main__":
+    main()
