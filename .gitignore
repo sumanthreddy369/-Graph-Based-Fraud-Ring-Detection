@@ -1,0 +1,36 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+.venv/
+.env/
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# Large graph data
+data/raw/
+*.gml
+*.graphml
+*.csv
+
+# Saved models
+*.pkl
+*.joblib
+models/
+
+# Graph images temp
+temp_graphs/
+outputs/
+
+# Logs
+*.log
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Cloud credentials
+.aws/
